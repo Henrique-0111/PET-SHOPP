@@ -1,0 +1,74 @@
+/* ==========================================================================
+   PetCare — Design Tokens
+   Fonte única de verdade para cores, tipografia, espaçamento e raios.
+   NÃO alterar valores aqui sem atualizar a identidade visual do sistema.
+   ========================================================================== */
+
+:root {
+  /* Cores — fundo */
+  --bg-primary: #F7F8F5;
+  --bg-secondary: #EAF2EC;
+  --bg-white: #FFFFFF;
+
+  /* Cores — marca */
+  --green-main: #789B87;
+  --green-dark: #4F705E;
+  --blue-gray: #91AEB2;
+  --blue-soft: #E7F0F1;
+
+  /* Cores — texto */
+  --text-primary: #34413A;
+  --text-secondary: #68756D;
+
+  /* Cores — utilitárias */
+  --border-color: #DDE4DF;
+  --white: #FFFFFF;
+
+  /* Estados (derivados suaves, sem saturação excessiva) */
+  --success: #6F9C7D;
+  --warning: #C9A24B;
+  --danger: #B56A62;
+  --info: var(--blue-gray);
+
+  /* Tipografia */
+  --font-heading: 'Nunito', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.375rem;
+  --fs-xl: 1.75rem;
+  --fs-2xl: 2.25rem;
+
+  /* Espaçamento (escala 4px) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Raios de borda */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+
+  /* Sombras — extremamente suaves */
+  --shadow-sm: 0 1px 3px rgba(52, 65, 58, 0.04);
+  --shadow-md: 0 4px 12px rgba(52, 65, 58, 0.06);
+  --shadow-lg: 0 8px 24px rgba(52, 65, 58, 0.08);
+
+  /* Transições */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.4s ease;
+
+  /* Layout */
+  --container-max: 1200px;
+  --header-height: 72px;
+}

@@ -1,0 +1,194 @@
+/* ==========================================================================
+   PetCare — Home
+   Estilos específicos da página inicial. Usa apenas tokens de variables.css.
+   ========================================================================== */
+
+/* ---------- Header: ações + toggle mobile ---------- */
+.header-actions { display: flex; align-items: center; gap: var(--space-3); }
+
+.nav-toggle {
+  display: flex; flex-direction: column; justify-content: center; gap: 4px;
+  width: 36px; height: 36px;
+  background: none; border: none; cursor: pointer;
+}
+.nav-toggle span {
+  display: block; width: 100%; height: 2px;
+  background-color: var(--text-primary);
+  border-radius: var(--radius-full);
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+@media (max-width: 899px) {
+  .nav-links {
+    position: absolute;
+    top: var(--header-height);
+    left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-color);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-base);
+  }
+  .nav-links.is-open { max-height: 320px; }
+  .nav-links a { width: 100%; padding: var(--space-4) var(--space-5); border-bottom: 1px solid var(--border-color); }
+  .nav-toggle { display: flex; }
+}
+@media (min-width: 900px) {
+  .nav-toggle { display: none; }
+}
+
+/* ---------- Hero ---------- */
+.hero { padding-block: var(--space-7); }
+
+.hero-grid {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.hero-subtitle {
+  max-width: 46ch;
+  margin-top: var(--space-4);
+  font-size: var(--fs-md);
+}
+
+.hero-cta { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
+
+.hero-stats {
+  display: flex;
+  gap: var(--space-6);
+  margin-top: var(--space-7);
+  flex-wrap: wrap;
+}
+.hero-stat { display: flex; flex-direction: column; }
+.hero-stat strong { font-family: var(--font-heading); font-size: var(--fs-lg); color: var(--green-dark); }
+.hero-stat span { font-size: var(--fs-xs); color: var(--text-secondary); }
+
+.hero-media { display: none; }
+.hero-media-shape {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--bg-secondary), var(--blue-soft));
+  border: 1px solid var(--border-color);
+}
+
+@media (min-width: 900px) {
+  .hero-grid { grid-template-columns: 1.1fr 0.9fr; }
+  .hero-media { display: block; }
+}
+
+/* ---------- Cabeçalhos de seção ---------- */
+.section-heading { max-width: 60ch; margin-bottom: var(--space-6); }
+.section-heading p { margin-top: var(--space-2); }
+.section-heading-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  max-width: none;
+}
+
+/* ---------- Serviços ---------- */
+.services-grid {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.service-card { display: flex; flex-direction: column; }
+.service-icon {
+  width: 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  background-color: var(--bg-secondary);
+  color: var(--green-dark);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-4);
+}
+.service-card h3 { margin-bottom: var(--space-2); }
+.service-card p { font-size: var(--fs-sm); flex-grow: 1; }
+.service-link {
+  display: inline-block;
+  margin-top: var(--space-4);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--green-dark);
+}
+
+/* ---------- Sobre / diferencial ---------- */
+.about-strip { background-color: var(--bg-secondary); border-radius: var(--radius-lg); }
+.about-grid { display: grid; gap: var(--space-6); align-items: center; }
+.about-media-shape {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--blue-soft), var(--bg-white));
+  border: 1px solid var(--border-color);
+}
+.about-content p { margin-top: var(--space-4); max-width: 52ch; }
+.about-list { margin-top: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); }
+.about-list li {
+  position: relative;
+  padding-left: var(--space-5);
+  font-size: var(--fs-sm);
+  color: var(--text-primary);
+}
+.about-list li::before {
+  content: '';
+  position: absolute; left: 0; top: 0.5em;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background-color: var(--green-main);
+}
+.about-content .btn { margin-top: var(--space-6); }
+
+@media (min-width: 900px) {
+  .about-grid { grid-template-columns: 0.9fr 1.1fr; }
+}
+
+/* ---------- Produtos em destaque ----------
+   Estilos do card de produto (.product-card, .products-grid) vivem em
+   components.css para serem reaproveitados em produtos.html. ---------- */
+
+/* ---------- Avaliações ---------- */
+.testimonials-grid {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) { .testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.testimonial-card p {
+  color: var(--text-primary);
+  font-size: var(--fs-base);
+  font-style: normal;
+}
+.testimonial-card footer { margin-top: var(--space-4); display: flex; flex-direction: column; }
+.testimonial-card footer strong { font-family: var(--font-heading); font-size: var(--fs-sm); }
+.testimonial-card footer span { font-size: var(--fs-xs); color: var(--text-secondary); }
+
+/* ---------- CTA final ---------- */
+.cta-section .cta-box {
+  background-color: var(--green-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-7) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+.cta-box h2, .cta-box p { color: var(--white); }
+.cta-box p { opacity: 0.85; margin-top: var(--space-2); }
+.cta-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.cta-box .btn-outline { border-color: rgba(255,255,255,0.5); color: var(--white); }
+.cta-box .btn-outline:hover { background-color: rgba(255,255,255,0.1); }
+.cta-box .btn-primary { background-color: var(--white); color: var(--green-dark); }
+.cta-box .btn-primary:hover { background-color: var(--bg-secondary); }
+
+@media (min-width: 768px) {
+  .cta-box { flex-direction: row; align-items: center; justify-content: space-between; }
+}

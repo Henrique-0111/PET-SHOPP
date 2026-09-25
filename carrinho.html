@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho — PetCare</title>
+  <meta name="description" content="Revise os itens do seu carrinho antes de finalizar a compra na PetCare.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/carrinho.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">PetCare</a>
+      <nav class="nav-links" data-nav-menu>
+        <a href="index.html">Início</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="agendamento.html">Agendamento</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <div class="header-actions">
+        <a href="carrinho.html" class="btn-icon" aria-label="Ver carrinho" aria-current="page">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </a>
+        <a href="login.html" class="btn btn-outline btn-sm">Entrar</a>
+        <button class="nav-toggle" data-nav-toggle aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="cart-section">
+      <div class="container">
+
+        <h1>Meu carrinho</h1>
+
+        <div class="cart-layout" data-cart-layout>
+
+          <!-- ===================== ITENS ===================== -->
+          <div class="cart-items" data-cart-items>
+
+            <article class="cart-item" data-cart-item data-price="189.90">
+              <div class="cart-item-image" style="background-color:#E7F0F1;"></div>
+
+              <div class="cart-item-info">
+                <span class="badge badge-info">Ração</span>
+                <h3><a href="produto.html" class="product-link">Ração Natural Adulto 10kg</a></h3>
+                <p class="cart-item-variant">Pacote de 10kg</p>
+                <button class="cart-item-remove" data-remove-item type="button">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0-1 14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2L4 6"/></svg>
+                  Remover
+                </button>
+              </div>
+
+              <div class="cart-item-qty">
+                <div class="quantity-stepper">
+                  <button type="button" data-qty-decrease aria-label="Diminuir quantidade">–</button>
+                  <input type="number" value="1" min="1" max="10" data-qty-input aria-label="Quantidade">
+                  <button type="button" data-qty-increase aria-label="Aumentar quantidade">+</button>
+                </div>
+              </div>
+
+              <strong class="cart-item-price" data-item-total>R$ 189,90</strong>
+            </article>
+
+            <article class="cart-item" data-cart-item data-price="34.90">
+              <div class="cart-item-image" style="background-color:#EAF2EC;"></div>
+
+              <div class="cart-item-info">
+                <span class="badge badge-success">Petisco</span>
+                <h3><a href="produto.html" class="product-link">Petisco Natural Desidratado</a></h3>
+                <p class="cart-item-variant">Pacote de 200g</p>
+                <button class="cart-item-remove" data-remove-item type="button">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0-1 14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2L4 6"/></svg>
+                  Remover
+                </button>
+              </div>
+
+              <div class="cart-item-qty">
+                <div class="quantity-stepper">
+                  <button type="button" data-qty-decrease aria-label="Diminuir quantidade">–</button>
+                  <input type="number" value="2" min="1" max="10" data-qty-input aria-label="Quantidade">
+                  <button type="button" data-qty-increase aria-label="Aumentar quantidade">+</button>
+                </div>
+              </div>
+
+              <strong class="cart-item-price" data-item-total>R$ 69,80</strong>
+            </article>
+
+            <article class="cart-item" data-cart-item data-price="249.00">
+              <div class="cart-item-image" style="background-color:#F7F8F5;"></div>
+
+              <div class="cart-item-info">
+                <span class="badge badge-neutral">Acessório</span>
+                <h3><a href="produto.html" class="product-link">Caminha Ortopédica G</a></h3>
+                <p class="cart-item-variant">Tamanho G · Cinza</p>
+                <button class="cart-item-remove" data-remove-item type="button">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0-1 14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2L4 6"/></svg>
+                  Remover
+                </button>
+              </div>
+
+              <div class="cart-item-qty">
+                <div class="quantity-stepper">
+                  <button type="button" data-qty-decrease aria-label="Diminuir quantidade">–</button>
+                  <input type="number" value="1" min="1" max="10" data-qty-input aria-label="Quantidade">
+                  <button type="button" data-qty-increase aria-label="Aumentar quantidade">+</button>
+                </div>
+              </div>
+
+              <strong class="cart-item-price" data-item-total>R$ 249,00</strong>
+            </article>
+
+            <a href="produtos.html" class="continue-shopping">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              Continuar comprando
+            </a>
+          </div>
+
+          <!-- ===================== RESUMO ===================== -->
+          <aside class="cart-summary">
+            <div class="card">
+              <h2>Resumo do pedido</h2>
+
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <strong data-summary-subtotal>R$ 508,70</strong>
+              </div>
+              <div class="summary-row">
+                <span>Frete</span>
+                <strong data-summary-shipping>R$ 19,90</strong>
+              </div>
+              <div class="summary-row summary-row-discount" data-summary-discount-row hidden>
+                <span>Desconto</span>
+                <strong data-summary-discount>– R$ 0,00</strong>
+              </div>
+
+              <form class="promo-form" data-promo-form>
+                <div class="field">
+                  <label for="promo-code">Cupom de desconto</label>
+                  <div class="promo-input-row">
+                    <input type="text" id="promo-code" class="input" placeholder="Digite o código">
+                    <button type="submit" class="btn btn-secondary">Aplicar</button>
+                  </div>
+                  <span class="field-hint" data-promo-hint></span>
+                </div>
+              </form>
+
+              <div class="summary-total">
+                <span>Total</span>
+                <strong data-summary-total>R$ 528,60</strong>
+              </div>
+
+              <button class="btn btn-primary btn-block btn-lg">Finalizar compra</button>
+              <p class="summary-note">Pagamento processado com segurança na próxima etapa.</p>
+            </div>
+          </aside>
+
+        </div>
+
+        <!-- Empty state (oculto por padrão; exibido via JS quando o carrinho fica vazio) -->
+        <div class="empty-state" data-cart-empty hidden>
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <h3>Seu carrinho está vazio</h3>
+          <p>Explore nossos produtos e encontre o que o seu pet precisa.</p>
+          <a href="produtos.html" class="btn btn-primary">Ver produtos</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <h4>PetCare</h4>
+        <a href="sobre.html">Sobre nós</a>
+        <a href="contato.html">Contato</a>
+        <a href="avaliacoes.html">Avaliações</a>
+      </div>
+      <div>
+        <h4>Serviços</h4>
+        <a href="servicos.html">Consultas</a>
+        <a href="servicos.html">Banho e tosa</a>
+        <a href="agendamento.html">Agendamento</a>
+      </div>
+      <div>
+        <h4>Loja</h4>
+        <a href="produtos.html">Produtos</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="pedidos.html">Meus pedidos</a>
+      </div>
+      <div>
+        <h4>Minha conta</h4>
+        <a href="login.html">Entrar</a>
+        <a href="cadastro.html">Criar conta</a>
+        <a href="perfil.html">Meu perfil</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 PetCare. Todos os direitos reservados.</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/carrinho.js"></script>
+</body>
+</html>

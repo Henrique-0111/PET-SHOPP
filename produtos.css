@@ -1,0 +1,92 @@
+/* ==========================================================================
+   PetCare — Produtos (catálogo)
+   ========================================================================== */
+
+.header-actions { display: flex; align-items: center; gap: var(--space-3); }
+.nav-toggle {
+  display: flex; flex-direction: column; justify-content: center; gap: 4px;
+  width: 36px; height: 36px; background: none; border: none; cursor: pointer;
+}
+.nav-toggle span { display: block; width: 100%; height: 2px; background-color: var(--text-primary); border-radius: var(--radius-full); }
+@media (max-width: 899px) {
+  .nav-links {
+    position: absolute; top: var(--header-height); left: 0; right: 0;
+    flex-direction: column; align-items: flex-start; gap: 0;
+    background-color: var(--bg-white); border-bottom: 1px solid var(--border-color);
+    max-height: 0; overflow: hidden; transition: max-height var(--transition-base);
+  }
+  .nav-links.is-open { max-height: 320px; }
+  .nav-links a { width: 100%; padding: var(--space-4) var(--space-5); border-bottom: 1px solid var(--border-color); }
+  .nav-toggle { display: flex; }
+}
+@media (min-width: 900px) { .nav-toggle { display: none; } }
+
+/* ---------- Cabeçalho da página ---------- */
+.catalog-section { padding-block: var(--space-6) var(--space-8); }
+.catalog-heading { max-width: 60ch; margin-bottom: var(--space-6); }
+.catalog-heading p { margin-top: var(--space-2); }
+
+/* ---------- Layout: filtros + resultados ---------- */
+.catalog-layout {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 960px) {
+  .catalog-layout { grid-template-columns: 260px 1fr; align-items: start; }
+}
+
+/* ---------- Filtros ---------- */
+.filters {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+.filters-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+.filter-group { margin-bottom: var(--space-5); }
+.filter-group h3 { font-size: var(--fs-sm); margin-bottom: var(--space-3); }
+.filter-group .checkbox { display: flex; margin-bottom: var(--space-2); font-size: var(--fs-sm); color: var(--text-primary); }
+.price-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+.price-inputs .field { margin-bottom: 0; }
+.price-inputs label { font-size: var(--fs-xs); }
+
+@media (max-width: 959px) {
+  .filters {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    border-radius: 0;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform var(--transition-base);
+  }
+  .filters.is-open { transform: translateX(0); }
+}
+
+/* ---------- Toolbar ---------- */
+.catalog-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+.search-field {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+.search-field svg {
+  position: absolute; left: var(--space-3); top: 50%; transform: translateY(-50%);
+  color: var(--text-secondary);
+}
+.search-field .input { padding-left: calc(var(--space-3) * 2 + 18px); }
+
+.toolbar-right { display: flex; gap: var(--space-3); }
+.filters-toggle { display: inline-flex; }
+@media (min-width: 960px) { .filters-toggle { display: none; } }
+
+.catalog-count { font-size: var(--fs-sm); color: var(--text-secondary); margin-bottom: var(--space-4); }

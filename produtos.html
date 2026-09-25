@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos — PetCare</title>
+  <meta name="description" content="Ração, petiscos, acessórios e itens de higiene selecionados pela equipe veterinária da PetCare.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/produtos.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">PetCare</a>
+      <nav class="nav-links" data-nav-menu>
+        <a href="index.html">Início</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="produtos.html" aria-current="page">Produtos</a>
+        <a href="agendamento.html">Agendamento</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <div class="header-actions">
+        <a href="carrinho.html" class="btn-icon" aria-label="Ver carrinho">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </a>
+        <a href="login.html" class="btn btn-outline btn-sm">Entrar</a>
+        <button class="nav-toggle" data-nav-toggle aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="catalog-section">
+      <div class="container">
+
+        <div class="catalog-heading">
+          <h1>Produtos</h1>
+          <p>Ração, petiscos e acessórios escolhidos com critério pela equipe veterinária.</p>
+        </div>
+
+        <div class="catalog-layout">
+
+          <!-- ===================== FILTROS ===================== -->
+          <aside class="filters" data-filters>
+            <div class="filters-header">
+              <h2>Filtros</h2>
+              <button class="btn btn-ghost btn-sm" data-filters-clear type="button">Limpar</button>
+            </div>
+
+            <div class="filter-group">
+              <h3>Categoria</h3>
+              <label class="checkbox"><input type="checkbox" name="category" value="racao" checked> Ração</label>
+              <label class="checkbox"><input type="checkbox" name="category" value="petisco" checked> Petiscos</label>
+              <label class="checkbox"><input type="checkbox" name="category" value="acessorio" checked> Acessórios</label>
+              <label class="checkbox"><input type="checkbox" name="category" value="higiene" checked> Higiene</label>
+              <label class="checkbox"><input type="checkbox" name="category" value="farmacia" checked> Farmácia</label>
+            </div>
+
+            <div class="filter-group">
+              <h3>Espécie</h3>
+              <label class="checkbox"><input type="checkbox" name="species" value="cao" checked> Cães</label>
+              <label class="checkbox"><input type="checkbox" name="species" value="gato" checked> Gatos</label>
+            </div>
+
+            <div class="filter-group">
+              <h3>Faixa de preço</h3>
+              <div class="price-inputs">
+                <div class="field">
+                  <label for="price-min">Mínimo</label>
+                  <input type="number" id="price-min" class="input" placeholder="R$ 0" min="0">
+                </div>
+                <div class="field">
+                  <label for="price-max">Máximo</label>
+                  <input type="number" id="price-max" class="input" placeholder="R$ 500" min="0">
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-block" data-filters-apply type="button">Aplicar filtros</button>
+          </aside>
+
+          <!-- ===================== RESULTADOS ===================== -->
+          <div class="catalog-results">
+
+            <div class="catalog-toolbar">
+              <div class="search-field">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+                <input type="search" class="input" placeholder="Buscar produtos..." data-search aria-label="Buscar produtos">
+              </div>
+
+              <div class="toolbar-right">
+                <button class="btn btn-outline btn-sm filters-toggle" data-filters-toggle type="button">
+                  Filtros
+                </button>
+                <select class="select" data-sort aria-label="Ordenar por">
+                  <option value="relevance">Mais relevantes</option>
+                  <option value="price-asc">Menor preço</option>
+                  <option value="price-desc">Maior preço</option>
+                  <option value="name">Ordem alfabética</option>
+                </select>
+              </div>
+            </div>
+
+            <p class="catalog-count" data-results-count>18 produtos encontrados</p>
+
+            <div class="products-grid" data-products-grid>
+
+              <article class="card card-hover product-card" data-category="racao" data-species="cao" data-price="189.90" data-name="Ração Natural Adulto 10kg">
+                <div class="product-image"></div>
+                <span class="badge badge-info">Ração</span>
+                <h3><a href="produto.html" class="product-link">Ração Natural Adulto 10kg</a></h3>
+                <p class="product-desc">Proteína de origem única, indicada para cães sensíveis.</p>
+                <div class="product-footer">
+                  <strong class="product-price">R$ 189,90</strong>
+                  <button class="btn btn-primary btn-sm">Adicionar</button>
+                </div>
+              </article>
+
+              <article class="card card-hover product-card" data-category="racao" data-species="gato" data-price="129.90" data-name="Ração Filhote Gatos 3kg">
+                <div class="product-image"></div>
+                <span class="badge badge-info">Ração</span>
+                <h3><a href="produto.html" class="product-link">Ração Filhote Gatos 3kg</a></h3>
+                <p class="product-desc">Fórmula para crescimento saudável nos primeiros meses.</p>
+                <div class="product-footer">
+                  <strong class="product-price">R$ 129,90</strong>
+                  <button class="btn btn-primary btn-sm">Adicionar</button>
+                </div>
+              </article>
+
+              <article class="card card-hover product-card" data-category="petisco" data-species="cao" data-price="34.90" data-name="Petisco Natural Desidratado">
+                <div class="product-image"></div>
+                <span class="badge badge-success">Petisco</span>
+                <h3><a href="produto.html" class="product-link">Petisco Natural Desidratado</a></h3>
+                <p class="product-desc">Sem conservantes, ideal para treinos e recompensas.</p>
+                <div class="product-footer">
+                  <strong class="product-price">R$ 34,90</strong>
+                  <button class="btn btn-primary btn-sm">Adicionar</button>
+                </div>
+              </article>
+
+              <article class="card card-hover product-card" data-category="acessorio" data-species="cao" data-price="249.00" data-name="Caminha Ortopédica G">
+                <div class="product-image"></div>
+                <span class="badge badge-neutral">Acessório</span>
+                <h3><a href="produto.html" class="product-link">Caminha Ortopédica G</a></h3>
+                <p class="product-desc">Espuma de alta densidade, recomendada para pets idosos.</p>
+                <div class="product-footer">
+                  <strong class="product-price">R$ 249,00</strong>
+                  <button class="btn btn-primary btn-sm">Adicionar</button>
+                </div>
+              </article>
+
+              <article class="card card-hover product-card" data-category="higiene" data-species="gato" data-price="59.90" data-name="Areia Higiênica Sílica 4kg">
+                <div class="product-image"></div>
+                <span class="badge badge-info">Higiene</span>
+                <h3><a href="produto.html" class="product-link">Areia Higiênica Sílica 4kg</a></h3>
+                <p class="product-desc">Alto poder de absorção e controle de odor.</p>
+                <div class="product-footer">
+                  <strong class="product-price">R$ 59,90</strong>
+                  <button class="btn btn-primary btn-sm">Adicionar</button>
+                </div>
+              </article>
+
+              <article class="card card-hover product-card" data-category="acessorio" data-species="gato" data-price="89.90" data-name="Arranhador Torre Pequena">
+                <div class="product-image"></div>
+                <span class="badge badge-neutral">Acessório</span>
+                <h3><a href="produto.html" class="product-link">Arranhador Torre Pequena</a></h3>
+                <p class="product-desc">Estrutura estável revestida em sisal natural.</p>
+                <div class="product-footer">
+                  <strong class="product-price">R$ 89,90</strong>
+                  <button class="btn btn-primary btn-sm">Adicionar</button>
+                </div>
+              </article>
+
+              <article class="card card-hover product-card" data-category="farmacia" data-species="cao" data-price="42.00" data-name="Antipulgas e Carrapatos Cães">
+                <div class="product-image"></div>
+                <span class="badge badge-warning">Farmácia</span>
+                <h3><a href="produto.html" class="product-link">Antipulgas e Carrapatos Cães</a></h3>
+                <p class="product-desc">Proteção mensal, uso conforme orientação veterinária.</p>
+                <div class="product-footer">
+                  <strong class="product-price">R$ 42,00</strong>
+                  <button class="btn btn-primary btn-sm">Adicionar</button>
+                </div>
+              </article>
+
+              <article class="card card-hover product-card" data-category="petisco" data-species="gato" data-price="24.90" data-name="Petisco Cremoso Gatos">
+                <div class="product-image"></div>
+                <span class="badge badge-success">Petisco</span>
+                <h3><a href="produto.html" class="product-link">Petisco Cremoso Gatos</a></h3>
+                <p class="product-desc">Textura pastosa, ótimo para dar medicação escondida.</p>
+                <div class="product-footer">
+                  <strong class="product-price">R$ 24,90</strong>
+                  <button class="btn btn-primary btn-sm">Adicionar</button>
+                </div>
+              </article>
+
+              <article class="card card-hover product-card" data-category="higiene" data-species="cao" data-price="38.50" data-name="Shampoo Neutro 500ml">
+                <div class="product-image"></div>
+                <span class="badge badge-info">Higiene</span>
+                <h3><a href="produto.html" class="product-link">Shampoo Neutro 500ml</a></h3>
+                <p class="product-desc">Fórmula suave, indicada para banhos frequentes.</p>
+                <div class="product-footer">
+                  <strong class="product-price">R$ 38,50</strong>
+                  <button class="btn btn-primary btn-sm">Adicionar</button>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- Empty state (oculto por padrão; exibido via JS quando o filtro não retorna itens) -->
+            <div class="empty-state" data-empty-state hidden>
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+              <h3>Nenhum produto encontrado</h3>
+              <p>Tente ajustar os filtros ou buscar por outro termo.</p>
+              <button class="btn btn-secondary" data-filters-clear type="button">Limpar filtros</button>
+            </div>
+
+            <nav class="pagination" aria-label="Paginação de produtos">
+              <button aria-label="Página anterior" disabled>‹</button>
+              <button class="is-active">1</button>
+              <button>2</button>
+              <button>3</button>
+              <button aria-label="Próxima página">›</button>
+            </nav>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <h4>PetCare</h4>
+        <a href="sobre.html">Sobre nós</a>
+        <a href="contato.html">Contato</a>
+        <a href="avaliacoes.html">Avaliações</a>
+      </div>
+      <div>
+        <h4>Serviços</h4>
+        <a href="servicos.html">Consultas</a>
+        <a href="servicos.html">Banho e tosa</a>
+        <a href="agendamento.html">Agendamento</a>
+      </div>
+      <div>
+        <h4>Loja</h4>
+        <a href="produtos.html">Produtos</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="pedidos.html">Meus pedidos</a>
+      </div>
+      <div>
+        <h4>Minha conta</h4>
+        <a href="login.html">Entrar</a>
+        <a href="cadastro.html">Criar conta</a>
+        <a href="perfil.html">Meu perfil</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 PetCare. Todos os direitos reservados.</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/produtos.js"></script>
+</body>
+</html>

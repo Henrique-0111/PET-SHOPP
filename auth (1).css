@@ -1,0 +1,160 @@
+/* ==========================================================================
+   PetCare — Auth (login.html / cadastro.html)
+   Estilos compartilhados das páginas de autenticação.
+   ========================================================================== */
+
+.header-actions { display: flex; align-items: center; gap: var(--space-3); }
+
+.nav-toggle {
+  display: flex; flex-direction: column; justify-content: center; gap: 4px;
+  width: 36px; height: 36px;
+  background: none; border: none; cursor: pointer;
+}
+.nav-toggle span {
+  display: block; width: 100%; height: 2px;
+  background-color: var(--text-primary);
+  border-radius: var(--radius-full);
+}
+@media (max-width: 899px) {
+  .nav-links {
+    position: absolute; top: var(--header-height); left: 0; right: 0;
+    flex-direction: column; align-items: flex-start; gap: 0;
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-color);
+    max-height: 0; overflow: hidden;
+    transition: max-height var(--transition-base);
+  }
+  .nav-links.is-open { max-height: 320px; }
+  .nav-links a { width: 100%; padding: var(--space-4) var(--space-5); border-bottom: 1px solid var(--border-color); }
+  .nav-toggle { display: flex; }
+}
+@media (min-width: 900px) { .nav-toggle { display: none; } }
+
+/* ---------- Layout geral ---------- */
+.auth-section { padding-block: var(--space-7); }
+
+.auth-grid {
+  display: grid;
+  gap: var(--space-6);
+  align-items: stretch;
+}
+
+@media (min-width: 960px) {
+  .auth-grid {
+    grid-template-columns: 1fr 1fr;
+    min-height: 640px;
+  }
+}
+
+/* ---------- Painel lateral (ilustrativo) ---------- */
+.auth-side {
+  display: none;
+  position: relative;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--green-dark), var(--green-main));
+  padding: var(--space-7);
+  overflow: hidden;
+}
+.auth-side-shape {
+  position: absolute;
+  right: -60px; bottom: -60px;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.08);
+}
+.auth-quote {
+  position: relative;
+  color: var(--white);
+  max-width: 36ch;
+  margin-top: auto;
+}
+.auth-quote p { color: var(--white); font-size: var(--fs-md); line-height: 1.5; }
+.auth-quote footer { margin-top: var(--space-4); display: flex; flex-direction: column; }
+.auth-quote footer strong { font-family: var(--font-heading); }
+.auth-quote footer span { font-size: var(--fs-xs); opacity: 0.8; }
+
+@media (min-width: 960px) {
+  .auth-side { display: flex; flex-direction: column; justify-content: flex-end; }
+}
+
+/* ---------- Formulário ---------- */
+.auth-form-wrap {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-form-header { margin-bottom: var(--space-6); }
+.auth-form-header p { margin-top: var(--space-2); }
+
+.auth-form { display: flex; flex-direction: column; }
+.auth-form > button[type="submit"] { margin-top: var(--space-3); }
+
+.password-field { position: relative; }
+.password-field .input { padding-right: var(--space-7); }
+.password-toggle {
+  position: absolute; right: var(--space-3); top: 50%;
+  transform: translateY(-50%);
+  background: none; border: none; cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+}
+.password-toggle:hover { color: var(--text-primary); }
+
+.auth-form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-5);
+  font-size: var(--fs-sm);
+}
+.auth-link { font-weight: 600; }
+
+.auth-divider {
+  display: flex; align-items: center; gap: var(--space-3);
+  margin-block: var(--space-5);
+  color: var(--text-secondary);
+  font-size: var(--fs-xs);
+}
+.auth-divider::before, .auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: var(--space-5);
+  font-size: var(--fs-sm);
+}
+.auth-switch a { font-weight: 600; }
+
+.auth-terms {
+  align-items: flex-start;
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+.auth-terms input { margin-top: 3px; }
+.auth-terms a { font-weight: 600; }
+
+/* ---------- Força de senha (usado no cadastro) ---------- */
+.password-strength {
+  display: flex;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+.password-strength-bar {
+  height: 4px; flex: 1;
+  border-radius: var(--radius-full);
+  background-color: var(--border-color);
+  transition: background-color var(--transition-fast);
+}
+.password-strength-bar.is-weak { background-color: var(--danger); }
+.password-strength-bar.is-medium { background-color: var(--warning); }
+.password-strength-bar.is-strong { background-color: var(--success); }

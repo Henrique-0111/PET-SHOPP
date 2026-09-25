@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar — PetCare</title>
+  <meta name="description" content="Entre na sua conta PetCare para acompanhar pets, agendamentos e pedidos.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">PetCare</a>
+      <nav class="nav-links" data-nav-menu>
+        <a href="index.html">Início</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="agendamento.html">Agendamento</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <div class="header-actions">
+        <a href="carrinho.html" class="btn-icon" aria-label="Ver carrinho">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </a>
+        <button class="nav-toggle" data-nav-toggle aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="auth-section">
+      <div class="container auth-grid">
+
+        <!-- ===================== PAINEL LATERAL ===================== -->
+        <div class="auth-side" aria-hidden="true">
+          <div class="auth-side-shape"></div>
+          <blockquote class="auth-quote">
+            <p>“Consigo ver todo o histórico de vacinas do meu cachorro e agendar em poucos cliques.”</p>
+            <footer>
+              <strong>Camila O.</strong>
+              <span>tutora do Mel</span>
+            </footer>
+          </blockquote>
+        </div>
+
+        <!-- ===================== FORMULÁRIO ===================== -->
+        <div class="auth-form-wrap">
+          <div class="auth-form-header">
+            <h1>Que bom ter você de volta</h1>
+            <p>Entre para acompanhar seus pets, agendamentos e pedidos.</p>
+          </div>
+
+          <div id="login-alert" class="alert alert-danger" hidden role="alert">
+            E-mail ou senha incorretos. Tente novamente.
+          </div>
+
+          <form id="login-form" class="auth-form" novalidate>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="input"
+                placeholder="seuemail@exemplo.com"
+                autocomplete="email"
+                required
+              >
+              <span class="field-error" data-error-for="email" hidden></span>
+            </div>
+
+            <div class="field">
+              <label for="password">Senha</label>
+              <div class="password-field">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="input"
+                  placeholder="Sua senha"
+                  autocomplete="current-password"
+                  required
+                >
+                <button type="button" class="password-toggle" data-password-toggle aria-label="Mostrar senha">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <span class="field-error" data-error-for="password" hidden></span>
+            </div>
+
+            <div class="auth-form-options">
+              <label class="checkbox">
+                <input type="checkbox" name="remember">
+                Lembrar de mim
+              </label>
+              <a href="#" class="auth-link">Esqueci minha senha</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg">
+              <span data-btn-label>Entrar</span>
+            </button>
+          </form>
+
+          <div class="auth-divider"><span>ou</span></div>
+
+          <button type="button" class="btn btn-outline btn-block">
+            <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.52 12.27c0-.85-.08-1.67-.22-2.45H12v4.64h6.47a5.53 5.53 0 0 1-2.4 3.63v3h3.88c2.27-2.09 3.57-5.17 3.57-8.82z"/><path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.95-2.91l-3.88-3c-1.08.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.27v3.11A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.27 14.28A7.2 7.2 0 0 1 4.89 12c0-.79.14-1.56.38-2.28V6.61H1.27A12 12 0 0 0 0 12c0 1.94.46 3.77 1.27 5.39z"/><path fill="#EA4335" d="M12 4.77c1.76 0 3.34.6 4.58 1.79l3.44-3.44C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.69 1.27 6.61l4 3.11C6.22 6.88 8.87 4.77 12 4.77z"/></svg>
+            Continuar com Google
+          </button>
+
+          <p class="auth-switch">
+            Ainda não tem conta? <a href="cadastro.html">Criar conta</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <h4>PetCare</h4>
+        <a href="sobre.html">Sobre nós</a>
+        <a href="contato.html">Contato</a>
+        <a href="avaliacoes.html">Avaliações</a>
+      </div>
+      <div>
+        <h4>Serviços</h4>
+        <a href="servicos.html">Consultas</a>
+        <a href="servicos.html">Banho e tosa</a>
+        <a href="agendamento.html">Agendamento</a>
+      </div>
+      <div>
+        <h4>Loja</h4>
+        <a href="produtos.html">Produtos</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="pedidos.html">Meus pedidos</a>
+      </div>
+      <div>
+        <h4>Minha conta</h4>
+        <a href="login.html">Entrar</a>
+        <a href="cadastro.html">Criar conta</a>
+        <a href="perfil.html">Meu perfil</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 PetCare. Todos os direitos reservados.</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

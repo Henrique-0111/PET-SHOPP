@@ -1,0 +1,234 @@
+/* ==========================================================================
+   PetCare — Agendamento
+   ========================================================================== */
+
+.header-actions { display: flex; align-items: center; gap: var(--space-3); }
+.nav-toggle {
+  display: flex; flex-direction: column; justify-content: center; gap: 4px;
+  width: 36px; height: 36px; background: none; border: none; cursor: pointer;
+}
+.nav-toggle span { display: block; width: 100%; height: 2px; background-color: var(--text-primary); border-radius: var(--radius-full); }
+@media (max-width: 899px) {
+  .nav-links {
+    position: absolute; top: var(--header-height); left: 0; right: 0;
+    flex-direction: column; align-items: flex-start; gap: 0;
+    background-color: var(--bg-white); border-bottom: 1px solid var(--border-color);
+    max-height: 0; overflow: hidden; transition: max-height var(--transition-base);
+  }
+  .nav-links.is-open { max-height: 320px; }
+  .nav-links a { width: 100%; padding: var(--space-4) var(--space-5); border-bottom: 1px solid var(--border-color); }
+  .nav-toggle { display: flex; }
+}
+@media (min-width: 900px) { .nav-toggle { display: none; } }
+
+.booking-section { padding-block: var(--space-6) var(--space-8); }
+.booking-heading { text-align: center; margin-bottom: var(--space-6); }
+.booking-heading p { margin-top: var(--space-2); }
+
+/* ---------- Stepper de progresso ---------- */
+.stepper-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-7);
+  counter-reset: step;
+}
+.stepper-nav li {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  text-align: center;
+  position: relative;
+}
+.stepper-nav li::after {
+  content: '';
+  position: absolute;
+  top: 15px; left: 50%;
+  width: 100%; height: 2px;
+  background-color: var(--border-color);
+  z-index: 0;
+}
+.stepper-nav li:last-child::after { display: none; }
+.stepper-nav li span {
+  display: flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-weight: 700;
+  font-family: var(--font-heading);
+  position: relative;
+  z-index: 1;
+}
+.stepper-nav li.is-active span,
+.stepper-nav li.is-complete span {
+  background-color: var(--green-dark);
+  color: var(--white);
+}
+.stepper-nav li.is-active { color: var(--text-primary); font-weight: 600; }
+.stepper-nav li.is-complete::after { background-color: var(--green-dark); }
+
+/* ---------- Etapas ---------- */
+.booking-step { display: none; }
+.booking-step.is-active { display: block; }
+.booking-step h2 { margin-bottom: var(--space-5); }
+
+/* ---------- Cards de opção (serviço / pet) ---------- */
+.option-cards {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) { .option-cards { grid-template-columns: repeat(2, 1fr); } }
+
+.option-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  background-color: var(--white);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+  position: relative;
+}
+.option-card input { position: absolute; opacity: 0; }
+.option-card:hover { border-color: var(--blue-gray); }
+.option-card:has(input:checked) {
+  border-color: var(--green-main);
+  background-color: var(--bg-secondary);
+}
+.option-card:has(input:focus-visible) { outline: 2px solid var(--green-main); outline-offset: 2px; }
+
+.option-card-icon {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-secondary);
+  color: var(--green-dark);
+}
+.option-card:has(input:checked) .option-card-icon { background-color: var(--white); }
+.option-card strong { font-family: var(--font-heading); font-size: var(--fs-base); }
+.option-card-desc { font-size: var(--fs-sm); color: var(--text-secondary); }
+
+.pet-card { align-items: center; text-align: center; }
+.pet-avatar { font-size: 2rem; }
+.pet-card-add { justify-content: center; border-style: dashed; color: var(--text-secondary); }
+.pet-avatar-add {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  font-size: var(--fs-lg);
+  color: var(--green-dark);
+}
+
+/* ---------- Calendário ---------- */
+.calendar {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  max-width: 360px;
+}
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+.calendar-header button {
+  width: 32px; height: 32px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--white);
+  cursor: pointer;
+  font-size: var(--fs-md);
+}
+.calendar-header button:hover { background-color: var(--bg-secondary); }
+.calendar-header strong { font-family: var(--font-heading); text-transform: capitalize; }
+
+.calendar-weekdays, .calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--space-1);
+}
+.calendar-weekdays span {
+  text-align: center;
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  padding-block: var(--space-1);
+}
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex; align-items: center; justify-content: center;
+  border: none;
+  background: none;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+.calendar-day:hover:not(:disabled) { background-color: var(--bg-secondary); }
+.calendar-day:disabled { color: var(--border-color); cursor: not-allowed; }
+.calendar-day.is-selected { background-color: var(--green-dark); color: var(--white); }
+.calendar-day.is-empty { visibility: hidden; }
+
+/* ---------- Horários ---------- */
+.time-slots { margin-top: var(--space-6); }
+.time-slots h3 { margin-bottom: var(--space-3); font-size: var(--fs-md); }
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: var(--space-2);
+}
+.time-slot {
+  padding: var(--space-2) var(--space-3);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: var(--white);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+}
+.time-slot:hover { border-color: var(--blue-gray); }
+.time-slot.is-selected { border-color: var(--green-main); background-color: var(--bg-secondary); color: var(--green-dark); font-weight: 600; }
+
+/* ---------- Resumo (etapa 4) ---------- */
+.booking-summary { margin-bottom: var(--space-5); }
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  padding-block: var(--space-2);
+  border-bottom: 1px solid var(--border-color);
+  font-size: var(--fs-sm);
+}
+.summary-line:last-child { border-bottom: none; }
+
+/* ---------- Navegação entre etapas ---------- */
+.booking-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-7);
+}
+.booking-nav [data-step-next],
+.booking-nav [data-step-submit] { margin-left: auto; }
+
+/* ---------- Sucesso ---------- */
+.booking-success { text-align: center; padding-block: var(--space-7); }
+.success-icon {
+  width: 64px; height: 64px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  color: var(--success);
+  margin-inline: auto;
+  margin-bottom: var(--space-5);
+}
+.booking-success p { max-width: 46ch; margin-inline: auto; margin-top: var(--space-2); }
+.success-actions { display: flex; justify-content: center; gap: var(--space-3); margin-top: var(--space-6); }
